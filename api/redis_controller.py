@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from service.grpc_service import GrpcService
+from service.grpc_service import GrpcService,create_grpc
 from utils.response_msg import ResponseMsg
 from utils.views import MyView
 from utils.wrapper import logging_wrapper
@@ -32,6 +32,7 @@ class RedisDetailController(MyView):
             value = grpc_obj.get(name=key_str)
         elif type_str == "hash":
             pass
+            value = grpc_obj.hgetall(name=key_str)
         elif type_str == "list":
             pass
         elif type_str == "set":
@@ -128,11 +129,12 @@ class RedisDbListController(MyView):
         @db-> int  redis's db num  0-16
         :return: {"list":[],"string":[],"hash":[],"set":[]}
         """
-        json_data = await self.request.json()
-        id_num = json_data.get("id")
-        db_num = json_data.get("db")
-        grpc_obj = GrpcService(self.request, id_num, db_num)
-        resp = grpc_obj.get_all_from_db()
+
+        data = self.request.match_info
+        id_num = data.get("id")
+        db_num = data.get("db")
+        grpc_obj = await create_grpc(self.request, id_num, db_num)
+        resp = await grpc_obj.get_all_from_db()
         return ResponseMsg(data=resp)
 
 

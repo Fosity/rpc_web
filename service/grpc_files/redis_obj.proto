@@ -71,6 +71,7 @@ message flushdbOut{
 }
 message flushallIn{
     string salt_pwd = 1;
+    int32 db =2 ;
 }
 message flushallOut{
     bool isok = 1;
@@ -132,6 +133,7 @@ message setexOut{
 message llenIn{
     string salt_pwd =1;
     string name =2;
+    int32 db =3;
 }
 message llenOut{
     int32 len =1;
@@ -141,6 +143,7 @@ message lrangeIn{
     string name =2;
     int32 start = 3;
     int32 len = 4;
+    int32 db =5;
 }
 message lrangeOut{
     repeated string values =1;

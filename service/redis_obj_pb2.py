@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='redis_obj',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0fredis_obj.proto\x12\tredis_obj\"7\n\x06keysIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x16\n\x07keysOut\x12\x0b\n\x03key\x18\x01 \x03(\t\"4\n\x06typeIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x17\n\x07typeOut\x12\x0c\n\x04type\x18\x01 \x01(\t\"6\n\x08\x64\x65leteIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x18\n\tdeleteOut\x12\x0b\n\x03num\x18\x01 \x01(\x05\"7\n\x08\x65xistsIn\x12\x11\n\tsalt_name\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1d\n\texistsOut\x12\x10\n\x08isexists\x18\x01 \x01(\x08\")\n\tflushdbIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1a\n\nflushdbOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"\x1e\n\nflushallIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\"\x1b\n\x0b\x66lushallOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"3\n\x05getIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x17\n\x06getOut\x12\r\n\x05value\x18\x01 \x01(\t\"B\n\x05setIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x16\n\x06setOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"E\n\x08getsetIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x1a\n\tgetsetOut\x12\r\n\x05value\x18\x01 \x01(\t\"D\n\x07setnxIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x18\n\x08setnxOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"4\n\x06mgetIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04keys\x18\x02 \x03(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x19\n\x07mgetOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"Q\n\x07setexIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05start\x18\x03 \x01(\x05\x12\x0b\n\x03len\x18\x04 \x01(\x05\x12\n\n\x02\x64\x62\x18\x05 \x01(\x05\"\x18\n\x08setexOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"(\n\x06llenIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x07llenOut\x12\x0b\n\x03len\x18\x01 \x01(\x05\"F\n\x08lrangeIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05start\x18\x03 \x01(\x05\x12\x0b\n\x03len\x18\x04 \x01(\x05\"\x1b\n\tlrangeOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"8\n\nsmembersIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1d\n\x0bsmembersOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"5\n\x07hkeysIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x18\n\x08hkeysOut\x12\x0c\n\x04keys\x18\x01 \x03(\t\"5\n\x07hvalsIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1a\n\x08hvalsOut\x12\x0e\n\x06values\x18\x01 \x03(\t2\x8a\x07\n\x08RedisObj\x12/\n\x04keys\x12\x11.redis_obj.keysIn\x1a\x12.redis_obj.keysOut\"\x00\x12/\n\x04type\x12\x11.redis_obj.typeIn\x1a\x12.redis_obj.typeOut\"\x00\x12\x35\n\x06\x64\x65lete\x12\x13.redis_obj.deleteIn\x1a\x14.redis_obj.deleteOut\"\x00\x12\x35\n\x06\x65xists\x12\x13.redis_obj.existsIn\x1a\x14.redis_obj.existsOut\"\x00\x12\x38\n\x07\x66lushdb\x12\x14.redis_obj.flushdbIn\x1a\x15.redis_obj.flushdbOut\"\x00\x12;\n\x08\x66lushall\x12\x15.redis_obj.flushallIn\x1a\x16.redis_obj.flushallOut\"\x00\x12,\n\x03get\x12\x10.redis_obj.getIn\x1a\x11.redis_obj.getOut\"\x00\x12,\n\x03set\x12\x10.redis_obj.setIn\x1a\x11.redis_obj.setOut\"\x00\x12\x35\n\x06getset\x12\x13.redis_obj.getsetIn\x1a\x14.redis_obj.getsetOut\"\x00\x12\x32\n\x05setnx\x12\x12.redis_obj.setnxIn\x1a\x13.redis_obj.setnxOut\"\x00\x12/\n\x04mget\x12\x11.redis_obj.mgetIn\x1a\x12.redis_obj.mgetOut\"\x00\x12\x32\n\x05setex\x12\x12.redis_obj.setexIn\x1a\x13.redis_obj.setexOut\"\x00\x12/\n\x04llen\x12\x11.redis_obj.llenIn\x1a\x12.redis_obj.llenOut\"\x00\x12\x35\n\x06lrange\x12\x13.redis_obj.lrangeIn\x1a\x14.redis_obj.lrangeOut\"\x00\x12;\n\x08smembers\x12\x15.redis_obj.smembersIn\x1a\x16.redis_obj.smembersOut\"\x00\x12\x32\n\x05hkeys\x12\x12.redis_obj.hkeysIn\x1a\x13.redis_obj.hkeysOut\"\x00\x12\x32\n\x05hvals\x12\x12.redis_obj.hvalsIn\x1a\x13.redis_obj.hvalsOut\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0fredis_obj.proto\x12\tredis_obj\"7\n\x06keysIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x16\n\x07keysOut\x12\x0b\n\x03key\x18\x01 \x03(\t\"4\n\x06typeIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x17\n\x07typeOut\x12\x0c\n\x04type\x18\x01 \x01(\t\"6\n\x08\x64\x65leteIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x18\n\tdeleteOut\x12\x0b\n\x03num\x18\x01 \x01(\x05\"7\n\x08\x65xistsIn\x12\x11\n\tsalt_name\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1d\n\texistsOut\x12\x10\n\x08isexists\x18\x01 \x01(\x08\")\n\tflushdbIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1a\n\nflushdbOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"*\n\nflushallIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\n\n\x02\x64\x62\x18\x02 \x01(\x05\"\x1b\n\x0b\x66lushallOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"3\n\x05getIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x17\n\x06getOut\x12\r\n\x05value\x18\x01 \x01(\t\"B\n\x05setIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x16\n\x06setOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"E\n\x08getsetIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x1a\n\tgetsetOut\x12\r\n\x05value\x18\x01 \x01(\t\"D\n\x07setnxIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\n\n\x02\x64\x62\x18\x04 \x01(\x05\"\x18\n\x08setnxOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"4\n\x06mgetIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04keys\x18\x02 \x03(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x19\n\x07mgetOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"Q\n\x07setexIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05start\x18\x03 \x01(\x05\x12\x0b\n\x03len\x18\x04 \x01(\x05\x12\n\n\x02\x64\x62\x18\x05 \x01(\x05\"\x18\n\x08setexOut\x12\x0c\n\x04isok\x18\x01 \x01(\x08\"4\n\x06llenIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x16\n\x07llenOut\x12\x0b\n\x03len\x18\x01 \x01(\x05\"R\n\x08lrangeIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05start\x18\x03 \x01(\x05\x12\x0b\n\x03len\x18\x04 \x01(\x05\x12\n\n\x02\x64\x62\x18\x05 \x01(\x05\"\x1b\n\tlrangeOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"8\n\nsmembersIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1d\n\x0bsmembersOut\x12\x0e\n\x06values\x18\x01 \x03(\t\"5\n\x07hkeysIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x18\n\x08hkeysOut\x12\x0c\n\x04keys\x18\x01 \x03(\t\"5\n\x07hvalsIn\x12\x10\n\x08salt_pwd\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\x05\"\x1a\n\x08hvalsOut\x12\x0e\n\x06values\x18\x01 \x03(\t2\x8a\x07\n\x08RedisObj\x12/\n\x04keys\x12\x11.redis_obj.keysIn\x1a\x12.redis_obj.keysOut\"\x00\x12/\n\x04type\x12\x11.redis_obj.typeIn\x1a\x12.redis_obj.typeOut\"\x00\x12\x35\n\x06\x64\x65lete\x12\x13.redis_obj.deleteIn\x1a\x14.redis_obj.deleteOut\"\x00\x12\x35\n\x06\x65xists\x12\x13.redis_obj.existsIn\x1a\x14.redis_obj.existsOut\"\x00\x12\x38\n\x07\x66lushdb\x12\x14.redis_obj.flushdbIn\x1a\x15.redis_obj.flushdbOut\"\x00\x12;\n\x08\x66lushall\x12\x15.redis_obj.flushallIn\x1a\x16.redis_obj.flushallOut\"\x00\x12,\n\x03get\x12\x10.redis_obj.getIn\x1a\x11.redis_obj.getOut\"\x00\x12,\n\x03set\x12\x10.redis_obj.setIn\x1a\x11.redis_obj.setOut\"\x00\x12\x35\n\x06getset\x12\x13.redis_obj.getsetIn\x1a\x14.redis_obj.getsetOut\"\x00\x12\x32\n\x05setnx\x12\x12.redis_obj.setnxIn\x1a\x13.redis_obj.setnxOut\"\x00\x12/\n\x04mget\x12\x11.redis_obj.mgetIn\x1a\x12.redis_obj.mgetOut\"\x00\x12\x32\n\x05setex\x12\x12.redis_obj.setexIn\x1a\x13.redis_obj.setexOut\"\x00\x12/\n\x04llen\x12\x11.redis_obj.llenIn\x1a\x12.redis_obj.llenOut\"\x00\x12\x35\n\x06lrange\x12\x13.redis_obj.lrangeIn\x1a\x14.redis_obj.lrangeOut\"\x00\x12;\n\x08smembers\x12\x15.redis_obj.smembersIn\x1a\x16.redis_obj.smembersOut\"\x00\x12\x32\n\x05hkeys\x12\x12.redis_obj.hkeysIn\x1a\x13.redis_obj.hkeysOut\"\x00\x12\x32\n\x05hvals\x12\x12.redis_obj.hvalsIn\x1a\x13.redis_obj.hvalsOut\"\x00\x62\x06proto3')
 )
 
 
@@ -412,6 +412,13 @@ _FLUSHALLIN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='db', full_name='redis_obj.flushallIn.db', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -425,7 +432,7 @@ _FLUSHALLIN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=431,
-  serialized_end=461,
+  serialized_end=473,
 )
 
 
@@ -455,8 +462,8 @@ _FLUSHALLOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=463,
-  serialized_end=490,
+  serialized_start=475,
+  serialized_end=502,
 )
 
 
@@ -500,8 +507,8 @@ _GETIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=492,
-  serialized_end=543,
+  serialized_start=504,
+  serialized_end=555,
 )
 
 
@@ -531,8 +538,8 @@ _GETOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=568,
+  serialized_start=557,
+  serialized_end=580,
 )
 
 
@@ -583,8 +590,8 @@ _SETIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=570,
-  serialized_end=636,
+  serialized_start=582,
+  serialized_end=648,
 )
 
 
@@ -614,8 +621,8 @@ _SETOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=638,
-  serialized_end=660,
+  serialized_start=650,
+  serialized_end=672,
 )
 
 
@@ -666,8 +673,8 @@ _GETSETIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=662,
-  serialized_end=731,
+  serialized_start=674,
+  serialized_end=743,
 )
 
 
@@ -697,8 +704,8 @@ _GETSETOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=733,
-  serialized_end=759,
+  serialized_start=745,
+  serialized_end=771,
 )
 
 
@@ -749,8 +756,8 @@ _SETNXIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=761,
-  serialized_end=829,
+  serialized_start=773,
+  serialized_end=841,
 )
 
 
@@ -780,8 +787,8 @@ _SETNXOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=831,
-  serialized_end=855,
+  serialized_start=843,
+  serialized_end=867,
 )
 
 
@@ -825,8 +832,8 @@ _MGETIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=857,
-  serialized_end=909,
+  serialized_start=869,
+  serialized_end=921,
 )
 
 
@@ -856,8 +863,8 @@ _MGETOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=911,
-  serialized_end=936,
+  serialized_start=923,
+  serialized_end=948,
 )
 
 
@@ -915,8 +922,8 @@ _SETEXIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=1019,
+  serialized_start=950,
+  serialized_end=1031,
 )
 
 
@@ -946,8 +953,8 @@ _SETEXOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1021,
-  serialized_end=1045,
+  serialized_start=1033,
+  serialized_end=1057,
 )
 
 
@@ -972,6 +979,13 @@ _LLENIN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='db', full_name='redis_obj.llenIn.db', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -984,8 +998,8 @@ _LLENIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1047,
-  serialized_end=1087,
+  serialized_start=1059,
+  serialized_end=1111,
 )
 
 
@@ -1015,8 +1029,8 @@ _LLENOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1089,
-  serialized_end=1111,
+  serialized_start=1113,
+  serialized_end=1135,
 )
 
 
@@ -1055,6 +1069,13 @@ _LRANGEIN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='db', full_name='redis_obj.lrangeIn.db', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1067,8 +1088,8 @@ _LRANGEIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1113,
-  serialized_end=1183,
+  serialized_start=1137,
+  serialized_end=1219,
 )
 
 
@@ -1098,8 +1119,8 @@ _LRANGEOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1185,
-  serialized_end=1212,
+  serialized_start=1221,
+  serialized_end=1248,
 )
 
 
@@ -1143,8 +1164,8 @@ _SMEMBERSIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1270,
+  serialized_start=1250,
+  serialized_end=1306,
 )
 
 
@@ -1174,8 +1195,8 @@ _SMEMBERSOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1272,
-  serialized_end=1301,
+  serialized_start=1308,
+  serialized_end=1337,
 )
 
 
@@ -1219,8 +1240,8 @@ _HKEYSIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1303,
-  serialized_end=1356,
+  serialized_start=1339,
+  serialized_end=1392,
 )
 
 
@@ -1250,8 +1271,8 @@ _HKEYSOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1358,
-  serialized_end=1382,
+  serialized_start=1394,
+  serialized_end=1418,
 )
 
 
@@ -1295,8 +1316,8 @@ _HVALSIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1384,
-  serialized_end=1437,
+  serialized_start=1420,
+  serialized_end=1473,
 )
 
 
@@ -1326,8 +1347,8 @@ _HVALSOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1439,
-  serialized_end=1465,
+  serialized_start=1475,
+  serialized_end=1501,
 )
 
 DESCRIPTOR.message_types_by_name['keysIn'] = _KEYSIN
@@ -1612,8 +1633,8 @@ _REDISOBJ = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1468,
-  serialized_end=2374,
+  serialized_start=1504,
+  serialized_end=2410,
   methods=[
   _descriptor.MethodDescriptor(
     name='keys',

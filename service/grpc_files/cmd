@@ -1,3 +1,3 @@
 python -m pip install grpcio
 python -m pip install grpcio-tools
-python3 -m grpc_tools.protoc -I ./service/grpc_files --python_out=./service --grpc_python_out=./service ./service/grpc_files/redis_obj.proto
+python -m grpc_tools.protoc -I ./service/grpc_files --python_out=./service --grpc_python_out=./service ./service/grpc_files/redis_obj.proto

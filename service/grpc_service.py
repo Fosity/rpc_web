@@ -1,19 +1,34 @@
 # -*- coding: utf-8 -*-
 import grpc
 import sqlalchemy as sa
-
+import logging
 from models.models import redis_info
 from service import redis_obj_pb2, redis_obj_pb2_grpc
 
+async def create_grpc(request,id=None,db_num = None):
+    """
+    利用工厂模式
+    :param request:
+    :param id:
+    :param db_num:
+    :return:
+    """
+    grpc_obj = GrpcService(request,id=id,db_num=db_num)
+    await grpc_obj._init()
+    return grpc_obj
 
 class GrpcService(object):
     def __init__(self, request, id=None, db_num=None):
         self.request = request
         self.db = request.app.db
-        if id:
-            yield from self.get_redis(id)
-        if db_num:
-            self.db_num = db_num
+        self.id = id
+        self.db_num =int(db_num) if db_num else None
+
+    async def _init(self):
+        if self.id:
+            self.id = int(self.id)
+            await self.get_redis(self.id)
+
 
     async def get_redis_info(self):
         async with self.db.acquire() as conn:
@@ -27,7 +42,6 @@ class GrpcService(object):
             resp = await (await redis_info.insert().values(
                 host=host, port=port, token=token
             ))
-            print(resp)
             return redis_obj_pb2
 
     async def get_redis(self, id):
@@ -39,6 +53,7 @@ class GrpcService(object):
             )).fetchone()
             self.url = f"{resp.host}:{resp.port}"
             self.token = resp.token
+            logging.info(f"{self.url}    {self.token}")
             return resp
 
     async def post_redis(self, host, port, token):
@@ -63,21 +78,28 @@ class GrpcService(object):
             }
             if item["type"] == "string":
                 item["value"] = self.get(name=key)
+                print(type(item["value"]))
                 msg["string"].append(item)
             elif item["type"] == "list":
                 len_ = self.llen(name=key)
-                item["value"] = self.lrange(name=key, self=0, len=len_)
+                item["value"] = list(self.lrange(name=key, start=0, len=len_))
+                print(type(item["value"]))
                 msg["list"].append(item)
             elif item["type"] == "set":
                 item["value"] = self.smembers(name=key)
+                print(type(item["value"]))
                 msg["set"].append(item)
             elif item["type"] == "hash":
-                item["type"] = {
-                    self.hkeys(name=key): self.hvals(name=key)
-                }
+                keys_ = self.hkeys(name=key)
+                vals_ = self.hvals(name=key)
+                item["value"] = {}
+                for i in range(len(keys_)):
+                    item["value"][keys_[i]]=vals_[i]
+                print(type(item["value"]))
                 msg["hash"].append(item)
             else:
                 pass
+        print(msg)
         return msg
 
     def excute(self, method, *args, **kwargs):
@@ -91,6 +113,8 @@ class GrpcService(object):
         """
         kwargs['db'] = self.db_num
         kwargs['salt_pwd'] = self.token
+        print(method)
+        print(kwargs)
         with grpc.insecure_channel(self.url) as channel:
             stub = redis_obj_pb2_grpc.RedisObjStub(channel)
             obj = getattr(stub, method)
@@ -119,6 +143,16 @@ class GrpcService(object):
 
     def get(self, name):
         key_value = self.excute('get', 'value', name=name)
+        return str(key_value)
+
+    def hgetall(self,name):
+        # todo 新增
+        """
+        通过 name 获取 hash 的所有 value 值
+        :param name:
+        :return:
+        """
+        key_value = self.excute('hgetall','value',name=name)
         return key_value
 
     def hkeys(self, name):

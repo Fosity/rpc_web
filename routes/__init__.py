@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from api import AuthLogin,CsrfProtection,AuthRegister,AuthLogout,AuthRouterMap,AuthInfo
-
+from api.redis_controller import RedisDbListController
 
 def setup_routes(app):
     # 注册路由
@@ -11,3 +11,4 @@ def setup_routes(app):
     app.router.add_route('*', '/router_map', AuthRouterMap)
     app.router.add_route('*', '/user_info', AuthInfo)
 
+    app.router.add_route('*','/redis/{db}/{id}',RedisDbListController)
