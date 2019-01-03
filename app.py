@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import logging
-
 from aiohttp import web
 
 from init import setup_logger, setup_redis, setup_db, close_db, close_redis, setup_new_signal
@@ -24,7 +23,7 @@ def my_signal(app):
     app.on_cleanup.append(close_redis)
 
 
-def main(host='127.0.0.1', port=8080, debug=False):
+def main(host='127.0.0.1', port=5000, debug=False):
     app = init_app(debug=debug)
     web.run_app(app, host=host, port=port)
 

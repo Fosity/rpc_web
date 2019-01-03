@@ -29,7 +29,7 @@ class Auth:
             if user is not None:
                 salt = user[1]
                 old_password = user[0]
-                new_password = self.__encrypt_pwd__(salt, password)
+                new_password =await self.__encrypt_pwd__(salt, password)
                 if old_password == new_password:
                     return True, user[2]
             # return False, None
@@ -40,8 +40,7 @@ class Auth:
         new_password =await self.__encrypt_pwd__(salt=salt, pwd=password)
         async with self.db.acquire() as conn:
             resp = await conn.execute(users.insert().values(password=new_password,username = username,salt = salt))
-
-            return True
+            return resp
     async def get_user_permission(self, user_id):
         async with self.db.acquire() as conn:
             roles_resp =await (await conn.execute(sa.select([roles.c.caption]).where(users_to_roles.c.user_id == user_id).where(

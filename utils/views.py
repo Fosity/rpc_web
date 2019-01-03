@@ -7,6 +7,7 @@ from middleware.auth import auth_check
 
 
 class MyView(web.View):
+
     async def _iter(self):
         if self.request.method not in hdrs.METH_ALL:
             self._raise_allowed_methods()

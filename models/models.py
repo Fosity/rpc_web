@@ -42,3 +42,25 @@ permissions = sa.Table(
     sa.Column('level', sa.Integer),  # 判断权限是  api or ui or menu
     sa.Column('parent', sa.Integer)  # 如果level 是menu 时候，父亲权限
 )
+
+redis_info = sa.Table(
+    'redis_info',meta,
+    sa.Column('id',sa.Integer,primary_key=True),
+    sa.Column('host',sa.String(10)), # redis host
+    sa.Column('port',sa.String(10)), # port
+    sa.Column('token',sa.String(16)),# redis connection token
+    sa.Column('last_connect_time',sa.DateTime)
+)
+
+redis_logs = sa.Table(
+    'redis_logs',meta,
+    sa.Column('id',sa.Integer,primary_key=True), # id
+    sa.Column('user_id',sa.Integer),# user_id
+    sa.Column('action',sa.Integer), # action  select 0 ,update 1, insert 2, delete 3
+    sa.Column('action_string',sa.String(10)), #
+    sa.Column('redis_id',sa.Integer), # redis_info_id
+    sa.Column('db',sa.Integer), # db num
+    sa.Column('key',sa.String(255)),# redis key
+    sa.Column('value',sa.String(255)), # redis value
+    sa.Column('ttl',sa.Integer),#  -1  or others
+)

@@ -30,3 +30,7 @@ csrf_expire = 15
 
 #################  csrf ###############
 csrf_redis_path = "csrf:redis:path:"
+
+
+################ grpc ####################
+grpc_path = "localhost:50051"

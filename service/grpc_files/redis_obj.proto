@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package redis_obj;
+
+service RedisObj{
+    // key 操作
+    rpc keys(keysIn) returns(keysOut) {}      // 获取所有符合规则的key
+    rpc type(typeIn) returns(typeOut) {}      // 判断key类型
+    rpc delete(deleteIn) returns(deleteOut) {}  // 删除key
+    rpc exists(existsIn) returns(existsOut) {} // 判断是否存在
+    rpc flushdb(flushdbIn) returns(flushdbOut) {}  // 删除当前数据库中的key
+    rpc flushall(flushallIn) returns(flushallOut) {} // 删除数据库中的key
+
+    // String 操作
+    rpc get(getIn) returns(getOut) {}
+    rpc set(setIn) returns(setOut) {}
+    rpc getset(getsetIn) returns(getsetOut) {}
+    rpc setnx(setnxIn) returns(setnxOut) {}
+    rpc mget(mgetIn) returns(mgetOut) {}
+    rpc setex(setexIn) returns(setexOut){}
+
+    // List 操作
+    rpc llen(llenIn) returns(llenOut) {}
+    rpc lrange(lrangeIn) returns (lrangeOut) {}
+
+    // set 操作
+    rpc smembers(smembersIn) returns(smembersOut) {}  // 返回key为name的set的所有元素
+
+    // Hash 操作
+    rpc hkeys(hkeysIn) returns(hkeysOut) {} // key=name 的所有建名
+    rpc hvals(hvalsIn) returns(hvalsOut) {} // key = name 的所有键值
+}
+message keysIn{
+    string salt_pwd = 1;
+    string pattern =2;
+    int32 db =3;
+}
+message keysOut{
+    repeated string key = 1;
+}
+message typeIn {
+    string salt_pwd = 1;
+    string name = 2;
+    int32 db =3;
+}
+message typeOut{
+    string type =1;
+}
+message deleteIn{
+    string salt_pwd =1;
+    string name = 2;
+    int32 db =3;
+}
+message deleteOut {
+    int32 num = 1;
+}
+message existsIn{
+    string salt_name = 1;
+    string name =2;
+    int32 db =3;
+}
+message existsOut{
+    bool isexists = 1;
+}
+message flushdbIn {
+    string salt_pwd = 1;
+    int32 db =3;
+}
+message flushdbOut{
+    bool isok = 1;
+}
+message flushallIn{
+    string salt_pwd = 1;
+}
+message flushallOut{
+    bool isok = 1;
+}
+
+message getIn{
+    string salt_pwd = 1;
+    string name =2;
+    int32 db =3;
+}
+message getOut{
+    string value =1 ;
+}
+message setIn{
+    string salt_pwd =1;
+    string name =2;
+    string value =3;
+    int32 db =4;
+}
+message setOut{
+    bool isok =1;
+}
+message getsetIn{
+    string salt_pwd = 1;
+    string name =2;
+    string value =3;
+    int32 db =4;
+}
+message getsetOut{
+    string value =1;
+}
+message setnxIn{
+    string salt_pwd =1;
+    string name =2 ;
+    string value =3;
+    int32 db =4 ;
+}
+message setnxOut{
+    bool isok =1;
+}
+message mgetIn{
+    string salt_pwd =1;
+    repeated string keys = 2;
+    int32 db =3;
+}
+message mgetOut{
+    repeated string values =1;
+}
+message setexIn{
+    string salt_pwd = 1;
+    string name =2;
+    int32 start =3;
+    int32 len = 4;
+    int32 db =5;
+}
+message setexOut{
+    bool isok =1;
+}
+message llenIn{
+    string salt_pwd =1;
+    string name =2;
+}
+message llenOut{
+    int32 len =1;
+}
+message lrangeIn{
+    string salt_pwd =1;
+    string name =2;
+    int32 start = 3;
+    int32 len = 4;
+}
+message lrangeOut{
+    repeated string values =1;
+}
+
+message smembersIn{
+    string salt_pwd =1;
+    string name =2;
+    int32 db =3 ;
+}
+message smembersOut{
+    repeated string values =1;
+}
+
+message hkeysIn{
+    string salt_pwd =1;
+    string name =2;
+    int32 db =3;
+}
+message hkeysOut{
+    repeated string keys =1;
+}
+message hvalsIn{
+    string salt_pwd =1;
+    string name =2;
+    int32 db =3;
+}
+message hvalsOut{
+    repeated string values =1;
+}
+
